@@ -27,6 +27,18 @@ services:
       mysql:
         condition: service_healthy
 
+  # PhpMyAdmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+
   # MySQL Service
   mysql:
     image: mysql:8
