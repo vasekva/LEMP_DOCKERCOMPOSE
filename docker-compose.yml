@@ -17,7 +17,7 @@ services:
 
   # PHP Service
   php:
-#    image: php:8.0-fpm
+    #    image: php:8.0-fpm
     build: ./.docker/php
     container_name: php
     working_dir: /var/www/php
@@ -53,6 +53,19 @@ services:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
       retries: 10
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
 
   # Volumes
 volumes:
