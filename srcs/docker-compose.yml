@@ -10,19 +10,19 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src:/var/www/php
-      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./requirements/php:/var/www/php
+      - ./requirements/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - php
 
   # PHP Service
   php:
     #    image: php:8.0-fpm
-    build: ./.docker/php
+    build: ./requirements/php
     container_name: php
     working_dir: /var/www/php
     volumes:
-      - ./src:/var/www/php
+      - ./requirements/php:/var/www/php
     depends_on:
       mysql:
         condition: service_healthy
@@ -37,9 +37,6 @@ services:
       PMA_HOST: mysql
     depends_on:
       - wordpress
-#    depends_on:
-#      mysql:
-#        condition: service_healthy
 
   # MySQL Service
   mysql:
@@ -51,7 +48,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     volumes:
-      - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./requirements/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - dbdata:/var/lib/mysql
     restart: always
     healthcheck:
