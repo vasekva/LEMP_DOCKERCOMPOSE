@@ -36,19 +36,24 @@ services:
     environment:
       PMA_HOST: mysql
     depends_on:
-      mysql:
-        condition: service_healthy
+      - wordpress
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
 
   # MySQL Service
   mysql:
     image: mysql:8
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: demo
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
     volumes:
       - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-      - mysqldata:/var/lib/mysql
+      - dbdata:/var/lib/mysql
+    restart: always
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
@@ -65,9 +70,11 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      mysql:
+        condition: service_healthy
 
 
   # Volumes
 volumes:
-
-  mysqldata:
+  dbdata:
