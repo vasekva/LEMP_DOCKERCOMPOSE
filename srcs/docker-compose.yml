@@ -42,11 +42,13 @@ services:
   mysql:
     image: mysql:8
     container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+    env_file:
+      - .env
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=secret
+#      - MYSQL_USER=user
+#      - MYSQL_PASWORD=secret
+#      - MYSQL_DATABASE=fuel
     volumes:
       - ./requirements/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - dbdata:/var/lib/mysql
@@ -64,9 +66,9 @@ services:
     restart: always
     environment:
       WORDPRESS_DB_HOST: mysql:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_NAME: fuel
     depends_on:
       mysql:
         condition: service_healthy
