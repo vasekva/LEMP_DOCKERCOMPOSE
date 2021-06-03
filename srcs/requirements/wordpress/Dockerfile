@@ -1,15 +1,12 @@
-FROM php:8.0-fpm
-
-WORKDIR /my_own_server
+FROM debian:buster
 
 RUN apt-get update && apt-get upgrade -y && \
-	apt-get install wget -y
+	apt-get install -y php-fpm php-mysql php-mbstring php-gd redis-server php-redis php-xml wget nano
 
-COPY . .
+EXPOSE 9000
 
-RUN mkdir -p /var/www/html/my_own_server
+COPY ./conf/ /var/www/
 
-RUN wget https://wordpress.org/latest.tar.gz && \
-	tar -xvzf latest.tar.gz && rm -rf latest.tar.gz && \
-	cp wp-config.php wordpress/ && \
-	mv wordpress /var/www/html/my_own_server/wordpress
+RUN chmod +x /var/www/wp.sh
+ENTRYPOINT ["/var/www/wp.sh"]
+CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
