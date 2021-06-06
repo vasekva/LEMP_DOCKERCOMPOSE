@@ -42,6 +42,7 @@ services:
     depends_on:
       - wordpress
   #WORD_PRESS
+
   wordpress:
     networks:
       - what_is_goin_on
