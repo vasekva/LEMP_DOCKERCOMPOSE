@@ -8,14 +8,14 @@ volumes:
   driver_opts:
    type: none
    o: bind
-   device: /home/jberegon/data/wp
+   device: /Users/jberegon/data/wp/
  db:
   driver: local
-  name: db
+  name: database
   driver_opts:
    type: none
    o: bind
-   device: /home/jberegon/data/database
+   device: /Users/jberegon/data/database/
 
 networks:
   what_is_goin_on:
