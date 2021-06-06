@@ -8,5 +8,7 @@ EXPOSE 9000
 COPY ./conf/ /var/www/
 
 RUN chmod +x /var/www/wp.sh
+
 ENTRYPOINT ["/var/www/wp.sh"]
+
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]

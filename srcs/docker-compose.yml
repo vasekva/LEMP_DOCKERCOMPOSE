@@ -1,21 +1,21 @@
 version: '3.9'
 
  #Volumes
-#volumes:
-#  wordpress:
-#    driver: local
-#    name: wordpress
-#    driver_opts:
-#      type: none
-#      o: bind
-#      device: /home/jberegon/data/wp
-#  db:
-#    driver: local
-#    name: database
-#    driver_opts:
-#      type: none
-#      o: bind
-#      device: /home/jberegon/data/database
+volumes:
+ wordpress:
+  driver: local
+  name: wordpress
+  driver_opts:
+   type: none
+   o: bind
+   device: /home/jberegon/data/wp
+ db:
+  driver: local
+  name: db
+  driver_opts:
+   type: none
+   o: bind
+   device: /home/jberegon/data/database
 
 networks:
   what_is_goin_on:
@@ -38,11 +38,11 @@ services:
     volumes:
       - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
       - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
-#      - wordpress:/var/www/html
+      - wordpress:/var/www/html
     depends_on:
       - wordpress
-  #WORD_PRESS
 
+  #WORD_PRESS
   wordpress:
     networks:
       - what_is_goin_on
@@ -50,19 +50,9 @@ services:
     build: ./requirements/wordpress/
     container_name: wordpress
     restart: always
-#    volumes:
-#      - wordpress:/var/www/html
+    volumes:
+     - wordpress:/var/www/html
     env_file: .env
-    #    environment:
-#      WORDPRESS_DB_HOST: mysql:3306
-#      WORDPRESS_DB_USER: user
-#      WORDPRESS_DB_PASSWORD: password
-#      WORDPRESS_DB_NAME: demo
-#      WORDPRESS_WEBSITE_URL_WITHOUT_HTTP: jberegon.42.fr
-#      WORDPRESS_WEBSITE_TITLE: MY_TITLE
-#      WORDPRESS_ADMIN_USER: jberegon
-#      WORDPRESS_ADMIN_PASSWORD: jberegon
-#      WORDPRESS_ADMIN_EMAIL: jberegon@mail.ru
     depends_on:
       - mariadb
   # MySQL Service
@@ -74,18 +64,10 @@ services:
     container_name: mariadb
     restart: always
     env_file: .env
-#    environment:
-#      MYSQL_ROOT_PASSWORD: somewordpress
-#      MYSQL_DATABASE: demo
-#      MYSQL_USER: user
-#      MYSQL_PASSWORD: password
     volumes:
       - ./requirements/mariadb/my.cnf:/etc/mysql/conf.d/my.cnf
-#      - db:/var/lib/mysql
+      - db:/var/lib/mysql
 #    healthcheck:
 #      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
 #      interval: 5s
 #      retries: 10
-
-
-

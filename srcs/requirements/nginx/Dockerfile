@@ -3,16 +3,12 @@ FROM debian:buster
 WORKDIR ./server_dir/
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install nginx vim openssl php-gd php-xml wget -y
+    apt-get install nginx vim openssl php-gd php-xml wget curl -y
 
 
 COPY . .
-#
-## Create dir for available servers
-#RUN mkdir -p /var/www/html/server_dir/ && \
-#    cp autoindex_on /etc/nginx/sites-available/ && \
-#    rm /etc/nginx/sites-enabled/default && rm /etc/nginx/sites-available/default && \
-#    ln -s /etc/nginx/sites-available/autoindex_on /etc/nginx/sites-enabled/my_first_server
+#COPY ./conf/ /var/www/
+COPY ./conf/nginx.conf /etc/nginx/sites-available
 
 # Remove the php.conf Nginx configuration file
 #RUN rm -v /etc/nginx/nginx.conf
