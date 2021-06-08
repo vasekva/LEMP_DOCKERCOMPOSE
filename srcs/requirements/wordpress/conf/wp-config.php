@@ -1,12 +1,12 @@
 <?php
-define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr' );
-define( 'WP_CACHE', true );
-define( 'DB_NAME', 'wp' );
-define( 'DB_USER', 'jberegon' );
-define( 'DB_PASSWORD', 'password ' );
-define( 'DB_HOST', 'mariadb' );
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
+define( 'WP_CACHE', true);
+define( 'DB_NAME', 'wp');
+define( 'DB_USER', 'jberegon');
+define( 'DB_PASSWORD', 'cool21');
+define( 'DB_HOST', 'mariadb');
+define( 'DB_CHARSET', 'utf8');
+define( 'DB_COLLATE', '');
 
 /**#@+
  * Authentication unique keys and salts.

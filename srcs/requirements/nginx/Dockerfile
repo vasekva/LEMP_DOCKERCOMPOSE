@@ -3,12 +3,17 @@ FROM debian:buster
 WORKDIR ./server_dir/
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install nginx vim openssl php-gd php-xml wget curl -y
+    apt-get install nginx openssl php-gd php-xml -y
 
+# RUN apt-get install vim wget curl
 
-COPY . .
-#COPY ./conf/ /var/www/
-COPY ./conf/nginx.conf /etc/nginx/sites-available
+#old <--
+# COPY . .
+# COPY ./conf/ /var/www/
+COPY ./conf/ .
+
+#old <--cd
+# COPY ./conf/nginx.conf /etc/nginx/sites-available
 
 # Remove the php.conf Nginx configuration file
 #RUN rm -v /etc/nginx/nginx.conf
@@ -23,17 +28,23 @@ RUN mkdir /etc/nginx/logs
 #ADD index.php /var/www/html
 
 # Append "daemon off;" to the beginning of the configuration
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+#old <--
+# RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Create a runner script for the entrypoint
 #COPY runner.sh /runner.sh
-RUN chmod +x ./runner.sh
+#old <--
+# RUN chmod +x ./runner.sh
+RUN chmod +x runner.sh
 
 # Expose ports
 EXPOSE 443
 
-ENTRYPOINT ["./runner.sh"]
+#old <--
+# ENTRYPOINT ["./runner.sh"]
+
+ENTRYPOINT ["bash", "runner.sh"]
 
 # Set the php.conf command to execute
 # when creating a new container
-CMD ["nginx"]
+CMD ["nginx", "-g", "daemon off;"]

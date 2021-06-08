@@ -2,17 +2,24 @@ FROM debian:buster
 
 WORKDIR ./server_dir/
 
-RUN apt-get update
+COPY . .
 
-RUN apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install mariadb-server -y
 
-RUN apt-get install -y default-mysql-server wget
+# CMD systemctl start mariadb
+# CMD mysql_secure_installation
+CMD bash mysql_secure.sh
 
 EXPOSE 3306
 
 COPY db.sh /var/www/
 
 RUN chmod +x /var/www/db.sh
+
+RUN mv 50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# RUN mv mySQL.cnf /etc/mysql/conf.d/
 
 ENTRYPOINT ["/var/www/db.sh"]
 

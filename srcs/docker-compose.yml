@@ -9,13 +9,13 @@ volumes:
    type: none
    o: bind
    device: /Users/jberegon/data/wp/
- db:
-  driver: local
-  name: database
-  driver_opts:
-   type: none
-   o: bind
-   device: /Users/jberegon/data/database/
+# db:
+#  driver: local
+#  name: database
+#  driver_opts:
+#   type: none
+#   o: bind
+#   device: /Users/jberegon/data/database/
 
 networks:
   what_is_goin_on:
@@ -26,47 +26,52 @@ networks:
 services:
 
   # Nginx Service
-  nginx:
-    networks:
-      - what_is_goin_on
-    image: nginx:1.19
-    build: ./requirements/nginx/
-    container_name: nginx
-    ports:
-      - "443:443"
-    restart: always
-    volumes:
-      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
-      - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
-      - wordpress:/var/www/html
-    depends_on:
-      - wordpress
+#  nginx:
+#    user: root
+#    networks:
+#      - what_is_goin_on
+##    image: nginx:latest
+#    build: ./requirements/nginx/
+#    container_name: nginx
+#    ports:
+#      - "443:443"
+#    restart: always
+#    env_file: .env
+#    volumes:
+#      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
+#      - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
+#      - wordpress:/var/www/html
+#    depends_on:
+#      - wordpress
 
   #WORD_PRESS
   wordpress:
+    user: root
     networks:
       - what_is_goin_on
-    image: wordpress:latest
+#    image: wordpress:latest
     build: ./requirements/wordpress/
     container_name: wordpress
     restart: always
     volumes:
-     - wordpress:/var/www/html
+      - wordpress:/var/www/html
     env_file: .env
-    depends_on:
-      - mariadb
+#    depends_on:
+#      - mariadb
   # MySQL Service
-  mariadb:
-    networks:
-      - what_is_goin_on
-    image: mariadb
-    build: ./requirements/mariadb/
-    container_name: mariadb
-    restart: always
-    env_file: .env
-    volumes:
-      - ./requirements/mariadb/my.cnf:/etc/mysql/conf.d/my.cnf
-      - db:/var/lib/mysql
+#  mariadb:
+#    networks:
+#      - what_is_goin_on
+#    image: mariadb:latest
+#    build: ./requirements/mariadb/
+#    container_name: mariadb
+#    restart: always
+#    user: root
+#    env_file: .env
+#    volumes:
+#      - ./requirements/mariadb/tools/mariadb.err:/var/log/mysql/mariadb.err
+#      - ./requirements/mariadb/mySQL.cnf:/etc/mysql/conf.d/mySQL.cnf
+#      - db:/var/lib/mysql
 #    healthcheck:
 #      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
 #      interval: 5s
