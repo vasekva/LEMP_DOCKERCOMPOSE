@@ -10,12 +10,8 @@ EXPOSE 9000
 # COPY ./conf/ /var/www/
 COPY ./conf/ .
 
-# RUN mkdir -p /var/www/html/
-
-RUN wget https://wordpress.org/latest.tar.gz && \
-	tar -xvzf latest.tar.gz && rm -rf latest.tar.gz && \
-	cp wp-config.php wordpress/ && \
-	mv wordpress /var/www/html/wordpress
+#RUN mkdir -p /var/www/html/
+#
 
 RUN mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
 # RUN  mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
