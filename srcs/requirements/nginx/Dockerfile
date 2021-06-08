@@ -13,13 +13,13 @@ RUN apt-get update && apt-get upgrade -y && \
 COPY ./conf/ .
 
 #old <--cd
-# COPY ./conf/nginx.conf /etc/nginx/sites-available
+# COPY ./conf/default /etc/nginx/sites-available
 
 # Remove the php.conf Nginx configuration file
-#RUN rm -v /etc/nginx/nginx.conf
+#RUN rm -v /etc/nginx/default
 
 # Copy a configuration file from the current directory
-#ADD nginx.conf /etc/nginx/
+#ADD default /etc/nginx/
 
 RUN mkdir /etc/nginx/logs
 
@@ -29,7 +29,7 @@ RUN mkdir /etc/nginx/logs
 
 # Append "daemon off;" to the beginning of the configuration
 #old <--
-# RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+# RUN echo "daemon off;" >> /etc/nginx/default
 
 # Create a runner script for the entrypoint
 #COPY runner.sh /runner.sh

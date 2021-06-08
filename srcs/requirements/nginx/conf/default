@@ -1,0 +1,26 @@
+server {
+    root /var/www/html/;
+    index index.php;
+
+    listen 443 ssl;
+    server_name jberegon.42.fr;
+    ##
+    # SSL Settings
+    ##
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/certificate.crt;
+    ssl_certificate_key /etc/nginx/ssl/private.key;
+ 	ssl_protocols TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+    ssl_ciphers TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-256-GCM-SHA384:TLS13-AES-128-GCM-SHA256:EECDH+CHACHA20:EECDH+AESGCM:EECDH+AES;
+ 	ssl_prefer_server_ciphers on;
+    location / {
+        autoindex on;
+        autoindex_format    html;
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass wordpress:9000;
+    }
+}

@@ -16,8 +16,8 @@ COPY ./conf/ .
 RUN mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
 # RUN  mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-RUN chmod +x wp_old.sh
+RUN chmod +x wp.sh
 
-ENTRYPOINT [ "bash", "wp_old.sh" ]
+ENTRYPOINT [ "bash", "wp.sh" ]
 
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
