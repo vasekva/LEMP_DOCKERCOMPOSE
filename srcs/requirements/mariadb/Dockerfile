@@ -17,7 +17,7 @@ COPY db.sh /var/www/
 
 RUN chmod +x /var/www/db.sh
 
-RUN mv 50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+#RUN mv 50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # RUN mv mySQL.cnf /etc/mysql/conf.d/
 

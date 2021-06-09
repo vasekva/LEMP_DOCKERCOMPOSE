@@ -71,7 +71,7 @@ services:
     user: root
     env_file: .env
     volumes:
-#      - ./requirements/mariadb/tools/mariadb.err:/var/log/mysql/mariadb.err
+      - ./requirements/mariadb/tools/error.log:/var/log/mysql/error.log
 #      - ./requirements/mariadb/mySQL.cnf:/etc/mysql/conf.d/mySQL.cnf
       - db:/var/lib/mysql
 #    healthcheck:
