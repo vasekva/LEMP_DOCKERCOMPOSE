@@ -13,6 +13,10 @@ clean:
 	docker volume rm $$(docker volume ls -q);\
 	docker network rm $$(docker network ls -q)
 
+cleandir:
+	rm -rf /Users/jberegon/data/wp/*
+	rm -rf /Users/jberegon/data/database/*
+
 re: clean
 	docker-compose -f srcs/docker-compose.yml up --build
 
