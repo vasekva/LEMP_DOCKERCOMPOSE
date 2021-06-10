@@ -1,5 +1,5 @@
 use mysql;
-update user set password=PASSWORD('cool42') where User='root';
+# update user set password=PASSWORD('cool42') where User='root';
 flush privileges;
 CREATE DATABASE IF NOT EXISTS wp;
 CREATE USER 'jberegon'@'%' IDENTIFIED BY 'cool21';

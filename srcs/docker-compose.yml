@@ -29,7 +29,7 @@ services:
     user: root
     networks:
       - what_is_goin_on
-#    image: nginx:latest
+    image: nginx:latest
     build: ./requirements/nginx/
     container_name: nginx
     ports:
@@ -48,7 +48,7 @@ services:
     user: root
     networks:
       - what_is_goin_on
-#    image: wordpress:latest
+    image: wordpress:latest
     build: ./requirements/wordpress/
     container_name: wordpress
     restart: always
@@ -56,9 +56,9 @@ services:
       - wordpress:/var/www/html
     env_file: .env
     depends_on:
-      - mariadb
-#      mariadb:
-#        condition: service_healthy
+      mariadb:
+        condition: service_healthy
+#      - mariadb
 
   #MySQL Service
   mariadb:
@@ -71,10 +71,10 @@ services:
     user: root
     env_file: .env
     volumes:
-      - ./requirements/mariadb/tools/error.log:/var/log/mysql/error.log
-#      - ./requirements/mariadb/mySQL.cnf:/etc/mysql/conf.d/mySQL.cnf
+      - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
       - db:/var/lib/mysql
-#    healthcheck:
-#      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
-#      interval: 5s
-#      retries: 10
+#      - ./requirements/mariadb/mySQL.cnf:/etc/mysql/conf.d/mySQL.cnf
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
+      interval: 5s
+      retries: 10

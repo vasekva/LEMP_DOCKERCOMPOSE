@@ -3,7 +3,7 @@ FROM debian:buster
 WORKDIR ./server_dir/
 
 RUN apt-get update && apt-get upgrade -y && \
-	apt-get install -y php-fpm php-mysql php-mbstring php-gd redis-server php-redis php-xml wget nano
+	apt-get install -y php-fpm php-mysql php-mbstring php-gd php-xml wget nano
 
 EXPOSE 9000
 
