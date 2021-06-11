@@ -58,7 +58,6 @@ services:
     depends_on:
       mariadb:
         condition: service_healthy
-#      - mariadb
 
   #MySQL Service
   mariadb:
@@ -73,7 +72,6 @@ services:
     volumes:
       - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
       - db:/var/lib/mysql
-#      - ./requirements/mariadb/mySQL.cnf:/etc/mysql/conf.d/mySQL.cnf
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s

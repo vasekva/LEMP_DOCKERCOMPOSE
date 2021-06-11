@@ -1,6 +1,5 @@
 up:
 	docker-compose -f srcs/docker-compose.yml up --build
-
 down:
 	docker-compose -f srcs/docker-compose.yml down
 ps:
@@ -9,7 +8,6 @@ ps:
 db:
 	docker container rm mariadb
 	rm -rf /Users/jberegon/data/database/*
-
 wp:
 	docker container rm wordpress
 	rm -rf /Users/jberegon/data/wordpress/*
@@ -27,6 +25,8 @@ cleandir:
 	rm -rf /Users/jberegon/data/database/*
 
 re: clean
+	rm -rf /Users/jberegon/data/wp/*
+	rm -rf /Users/jberegon/data/database/*
 	docker-compose -f srcs/docker-compose.yml up --build
 
 .PHONY: build stop re clean

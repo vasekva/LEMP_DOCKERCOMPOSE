@@ -1,10 +1,10 @@
 <?php
-define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
-define( 'WP_CACHE', true);
-define( 'DB_NAME', 'wp');
-define( 'DB_USER', 'jberegon');
-define( 'DB_PASSWORD', 'cool21');
-define( 'DB_HOST', 'mariadb');
+// define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
+// define( 'WP_CACHE', true);
+define( 'DB_NAME', getenv('DATABASE'));
+define( 'DB_USER', getenv('DB_USER'));
+define( 'DB_PASSWORD', getenv('DB_PASSWORD'));
+define( 'DB_HOST', getenv('DB_HOST'));
 define( 'DB_CHARSET', 'utf8');
 define( 'DB_COLLATE', '');
 

@@ -7,14 +7,10 @@ RUN apt-get update && apt-get upgrade -y && \
 
 EXPOSE 9000
 
-# COPY ./conf/ /var/www/
 COPY ./conf/ .
-
-#RUN mkdir -p /var/www/html/
-#
+COPY ./tools/ .
 
 RUN mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
-# RUN  mv www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN chmod +x wp.sh
 
