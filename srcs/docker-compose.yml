@@ -26,53 +26,62 @@ networks:
 services:
   # Nginx Service
   nginx:
-    user: root
-    networks:
-      - what_is_goin_on
-    image: nginx:latest
-    build: ./requirements/nginx/
-    container_name: nginx
     ports:
       - "443:443"
+    build: ./requirements/nginx/
     restart: always
-    env_file: .env
     volumes:
-      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
+      - ./requirements/nginx/tools/nginx-error.txt:/var/log/nginx/error.log
       - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
       - wordpress:/var/www/html
+    env_file: .env
+    networks:
+      - what_is_goin_on
     depends_on:
       - wordpress
+    container_name: nginx
 
   #WORD_PRESS
   wordpress:
-    user: root
-    networks:
-      - what_is_goin_on
-    image: wordpress:latest
     build: ./requirements/wordpress/
-    container_name: wordpress
     restart: always
     volumes:
       - wordpress:/var/www/html
+      - ./requirements/wordpress/tools/debug.txt:/var/www/html/wordpress/wp-content/debug.log
     env_file: .env
+    networks:
+      - what_is_goin_on
     depends_on:
       mariadb:
         condition: service_healthy
+    container_name: wordpress
+
+#  #Adminer
+#  adminer:
+#    image: adminer
+#    ports:
+#      - "8080:8080"
+#    restart: always
+#    environment:
+#      ADMINER_DEFAULT_SERVER: mariadb
+#    networks:
+#      - what_is_goin_on
+#    depends_on:
+#      mariadb:
+#        condition: service_healthy
 
   #MySQL Service
   mariadb:
-    networks:
-      - what_is_goin_on
-    image: mariadb:latest
     build: ./requirements/mariadb/
-    container_name: mariadb
     restart: always
-    user: root
-    env_file: .env
     volumes:
       - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
       - db:/var/lib/mysql
+    env_file: .env
+    networks:
+      - what_is_goin_on
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
       retries: 10
+    container_name: mariadb

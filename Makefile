@@ -5,12 +5,22 @@ down:
 ps:
 	docker-compose -f srcs/docker-compose.yml ps
 
+
 db:
 	docker container rm mariadb
 	rm -rf /Users/jberegon/data/database/*
 wp:
 	docker container rm wordpress
 	rm -rf /Users/jberegon/data/wordpress/*
+
+
+exec_db:
+	docker-compose -f srcs/docker-compose.yml exec mariadb bash
+exec_nginx:
+	docker-compose -f srcs/docker-compose.yml exec nginx bash
+exec_wp:
+	docker-compose -f srcs/docker-compose.yml exec wordpress bash
+
 
 clean:
 	docker stop $$(docker ps -qa); \

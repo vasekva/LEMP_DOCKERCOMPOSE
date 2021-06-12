@@ -1,6 +1,6 @@
 <?php
-// define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
-// define( 'WP_CACHE', true);
+define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
+define( 'WP_CACHE', true);
 define( 'DB_NAME', getenv('DATABASE'));
 define( 'DB_USER', getenv('DB_USER'));
 define( 'DB_PASSWORD', getenv('DB_PASSWORD'));
@@ -27,6 +27,7 @@ define('AUTH_SALT',        '956ea1e50f540c75438ad25575d0cd82ff580275');
 define('SECURE_AUTH_SALT', '6c5a28d99659928535681f784f175f6706c13d31');
 define('LOGGED_IN_SALT',   '43c402fe7eb08bb2cd79339d94bee8fcd9da6326');
 define('NONCE_SALT',       'babb7b01526b80c0d47002f26aea6a00ed30014a');
+
 /**
  * WordPress database table prefix.
  *
@@ -47,8 +48,13 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+// Enable Debug logging to the /wp-content/debug.log file
+define( 'WP_DEBUG_LOG', true );
 
+// Disable display of errors and warnings
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set( 'display_errors', 0 );
 /* Add any custom values between this line and the "stop editing" line. */
 
 

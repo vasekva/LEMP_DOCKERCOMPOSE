@@ -14,7 +14,7 @@ if [ ! -d /var/lib/mysql/wp ]; then
   mysql -u root -e "FLUSH PRIVILEGES"
   mysqladmin -u root password $DB_ROOT_PASSWORD
   echo "STOP"
-  service mysql stop -u root -p $DB_ROOT_PASSWORD
+  #service mysql stop -u root -p $DB_ROOT_PASSWORD
 #  service mysql stop
 else
   mkdir /var/run/mysqld
