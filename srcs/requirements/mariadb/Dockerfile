@@ -4,18 +4,18 @@ WORKDIR ./server_dir/
 
 COPY ./conf/ .
 COPY ./tools/db.sh .
+COPY ./tools/secure.sh .
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install mariadb-server -y
 
-CMD bash mysql_secure.sh
+VOLUME ./tools/error.txt:/var/log/mysql/error.log
 
 EXPOSE 3306
 
-COPY tools/db.sh /var/www/
+RUN chmod +x ./db.sh
 
-RUN chmod +x /var/www/db.sh
+ENTRYPOINT ["./db.sh"]
 
-ENTRYPOINT ["/var/www/db.sh"]
-
+RUN echo "CMD"
 CMD ["mysqld"]

@@ -38,7 +38,7 @@ services:
     networks:
       - what_is_goin_on
     depends_on:
-      - wordpress
+      - mariadb
     container_name: nginx
 
   #WORD_PRESS
@@ -75,13 +75,13 @@ services:
     build: ./requirements/mariadb/
     restart: always
     volumes:
-      - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
+#      - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
       - db:/var/lib/mysql
     env_file: .env
     networks:
       - what_is_goin_on
     healthcheck:
-      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
+      test: mysqladmin ping -h 127.0.0.1 -u jberegon --password=dbpass
       interval: 5s
       retries: 10
     container_name: mariadb
