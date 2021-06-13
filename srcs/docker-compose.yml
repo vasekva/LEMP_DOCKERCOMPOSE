@@ -1,6 +1,6 @@
 version: '3.9'
 
- #Volumes
+#Volumes
 volumes:
  wordpress:
   driver: local
@@ -31,7 +31,7 @@ services:
     build: ./requirements/nginx/
     restart: always
     volumes:
-      - ./requirements/nginx/tools/nginx-error.txt:/var/log/nginx/error.log
+      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
       - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
       - wordpress:/var/www/html
     env_file: .env
@@ -47,7 +47,7 @@ services:
     restart: always
     volumes:
       - wordpress:/var/www/html
-      - ./requirements/wordpress/tools/debug.txt:/var/www/html/wordpress/wp-content/debug.log
+      - ./requirements/wordpress/tools/debug.log:/var/www/html/wordpress/wp-content/debug.log
     env_file: .env
     networks:
       - what_is_goin_on
@@ -55,6 +55,60 @@ services:
       mariadb:
         condition: service_healthy
     container_name: wordpress
+
+  #MySQL Service
+  mariadb:
+    build: ./requirements/mariadb/
+    restart: always
+    volumes:
+      #      - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
+      - db:/var/lib/mysql
+    env_file: .env
+    networks:
+      - what_is_goin_on
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u jberegon --password=dbpass
+      interval: 5s
+      retries: 10
+    container_name: mariadb
+
+  #REDIS_CACHE
+  redis_cache:
+    build: ./requirements/redis-cache/
+    restart: always
+    volumes:
+      - wordpress:/var/www/html
+#      - ./requirements/redis-cache/conf/redis.conf:/etc/redis/redis.conf
+    env_file: .env
+    networks:
+      - what_is_goin_on
+    depends_on:
+      - wordpress
+    container_name: redis_cache
+
+
+#  ftpd-server:
+#    ports:
+#      - "21:21"
+#      - "20:20"
+#      - "30000-30009:30000-30009"
+##    image: stilliard/pure-ftpd:hardened
+#    build: ./requirements/ftp-server/
+#    restart: always
+#    volumes:
+##      - wordpress:/var/ftp/
+#      - wordpress:/var/www/html/
+#      - ./requirements/ftp-server/tools/logs/pureftpd.log:/var/log/pureftpd.log
+##      - /etc/pure-ftpd
+##      - /home/ftpusers
+#    environment:
+#      PUBLICHOST: "localhost"
+#      FTP_USER_NAME: "test"
+#      FTP_USER_PASS: "test"
+#      FTP_USER_HOME: "/var/www/html/"
+#    networks:
+#      - what_is_goin_on
+#    container_name: ftpd-server
 
 #  #Adminer
 #  adminer:
@@ -70,18 +124,4 @@ services:
 #      mariadb:
 #        condition: service_healthy
 
-  #MySQL Service
-  mariadb:
-    build: ./requirements/mariadb/
-    restart: always
-    volumes:
-#      - ./requirements/mariadb/tools/error.txt:/var/log/mysql/error.log
-      - db:/var/lib/mysql
-    env_file: .env
-    networks:
-      - what_is_goin_on
-    healthcheck:
-      test: mysqladmin ping -h 127.0.0.1 -u jberegon --password=dbpass
-      interval: 5s
-      retries: 10
-    container_name: mariadb
+

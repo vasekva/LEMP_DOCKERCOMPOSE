@@ -2,3 +2,4 @@
 [12-Jun-2021 15:41:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'jberegon'@'wordpress.what_is_goin_on' (using password: YES) in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
 [12-Jun-2021 15:41:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'jberegon'@'wordpress.what_is_goin_on' (using password: YES) in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
 [12-Jun-2021 15:41:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'jberegon'@'wordpress.what_is_goin_on' (using password: YES) in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[13-Jun-2021 13:02:56 UTC] PHP Warning:  chmod(): Input/output error in /var/www/html/wordpress/wp-admin/includes/class-wp-filesystem-direct.php on line 173

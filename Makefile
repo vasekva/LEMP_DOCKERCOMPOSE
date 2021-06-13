@@ -20,7 +20,10 @@ exec_nginx:
 	docker-compose -f srcs/docker-compose.yml exec nginx bash
 exec_wp:
 	docker-compose -f srcs/docker-compose.yml exec wordpress bash
-
+exec_ftp:
+	docker-compose -f srcs/docker-compose.yml exec ftpd-server bash
+exec_redis:
+	docker-compose -f srcs/docker-compose.yml exec redis_cache bash
 
 clean:
 	docker stop $$(docker ps -qa); \

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-  sed -i "s/supervised no/supervised systemd/" "/etc/redis/redis.conf"
-  sed -i "s/#maxmemory/maxmemory 128M/" "/etc/redis/redis.conf"
-  sed -i "s/#maxmemory-policy noeviction/maxmemory-policy allkeys-lfu/" "/etc/redis/redis.conf"
+#  sed -i "s/supervised no/supervised systemd/" "/etc/redis/redis.conf"
+#  sed -i "s/#maxmemory/maxmemory 128M/" "/etc/redis/redis.conf"
+#  sed -i "s/#maxmemory-policy noeviction/maxmemory-policy allkeys-lfu/" "/etc/redis/redis.conf"
   mkdir -p /run/php/
   touch /run/php/php7.3-fpm.pid
   chown -R www-data:www-data /var/www/*
@@ -25,12 +25,12 @@ if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
       --admin_email=${WP_ADMIN_EMAIL}
   wp user create --allow-root ${WP_USER} ${WP_USER_EMAIL} --user_pass=${WP_USER_PASS}
 
-  mv /server_dir/object-cache.php /var/www/html/wordpress/wp-content/
+#  mv /server_dir/object-cache.php /var/www/html/wordpress/wp-content/
 
   wp plugin install --allow-root redis-cache
   wp plugin activate --allow-root redis-cache
 
 fi
-  service redis-server start
+#  service redis-server start
 #  service php7.3-fpm start
 exec "$@"
