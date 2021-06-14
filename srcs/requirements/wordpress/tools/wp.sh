@@ -18,7 +18,7 @@ if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
   mv /server_dir/wp-config.php /var/www/html/wordpress
   echo "Configuring Wordpress parameters"
   wp core install --allow-root \
-      --url=${WP_URL} \
+      --url=${URL} \
       --title=${WP_TITLE} \
       --admin_user=${WP_ADMIN} \
       --admin_password=${WP_ADMIN_PASS} \
@@ -27,8 +27,8 @@ if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
 
 #  mv /server_dir/object-cache.php /var/www/html/wordpress/wp-content/
 
-  wp plugin install --allow-root redis-cache
-  wp plugin activate --allow-root redis-cache
+#  wp plugin install --allow-root redis-cache
+#  wp plugin activate --allow-root redis-cache
 
 fi
 #  service redis-server start

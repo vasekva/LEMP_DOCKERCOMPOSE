@@ -1,5 +1,8 @@
 <?php
-define( 'WP_CACHE_KEY_SALT', 'jberegon.42.fr');
+define( 'WP_REDIS_HOST', 'redis_cache');
+define( 'WP_REDIS_PORT', 6379 );
+define( 'WP_REDIS_CLIENT', 'redis_cache' );
+define( 'WP_CACHE_KEY_SALT', getenv('URL'));
 define( 'WP_CACHE', true);
 define( 'DB_NAME', getenv('DATABASE'));
 define( 'DB_USER', getenv('DB_USER'));
