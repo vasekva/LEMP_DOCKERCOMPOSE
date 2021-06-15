@@ -2,6 +2,13 @@ version: '3.9'
 
 #Volumes
 volumes:
+ html:
+  driver: local
+  name: html
+  driver_opts:
+   type: none
+   o: bind
+   device: /Users/jberegon/data/html/
  wordpress:
   driver: local
   name: wordpress
@@ -16,20 +23,13 @@ volumes:
    type: none
    o: bind
    device: /Users/jberegon/data/database/
- usr:
+ bin:
    driver: local
-   name: usr
+   name: bin
    driver_opts:
      type: none
      o: bind
-     device: /Users/jberegon/data/usr/
- page:
-   driver: local
-   name: page
-   driver_opts:
-     type: none
-     o: bind
-     device: /Users/jberegon/data/page/
+     device: /Users/jberegon/data/wp_bin/
 networks:
   what_is_goin_on:
     name: what_is_goin_on
@@ -46,14 +46,13 @@ services:
     volumes:
       - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
       - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/wordpress/
+      - html:/var/www/html/
     env_file: .env
     networks:
       - what_is_goin_on
     depends_on:
       - wordpress
-#      wordpress:
-#        condition: service_healthy
     container_name: nginx
 
   #WORD_PRESS
@@ -61,16 +60,14 @@ services:
     build: ./requirements/wordpress/
     restart: always
     volumes:
-      - wordpress:/var/www/html
-      - usr:/usr/local/bin/
+      - wordpress:/var/www/html/wordpress/
+      - bin:/usr/local/bin/
       - ./requirements/wordpress/tools/debug.log:/var/www/html/wordpress/wp-content/debug.log
     env_file: .env
     networks:
       - what_is_goin_on
     depends_on:
       - mariadb
-#      mariadb:
-#        condition: service_healthy
     healthcheck:
       test: -d /var/www/html/wordpress/
       interval: 5s
@@ -130,23 +127,19 @@ services:
       PASS: "password"
     networks:
       - what_is_goin_on
-#    depends_on:
-#      - redis_cache
     container_name: ftpd-server
 
   #Adminer
   adminer:
-#    image: adminer
     build: ./requirements/adminer/
-    ports:
-      - "8080:8080"
+#    ports:
+#      - "8080:8080"
     restart: always
     env_file: .env
     networks:
       - what_is_goin_on
     volumes:
-      - wordpress:/var/www/html/
-#      - /Users/jberegon/data/adminer_copy/:/run/
+      - html:/var/www/html/
     depends_on:
       mariadb:
         condition: service_healthy
@@ -158,7 +151,6 @@ services:
     networks:
       - what_is_goin_on
     volumes:
-      - wordpress:/var/www/html/
-#      - page:/usr/share/nginx/html/
+      - html:/var/www/html/
     container_name: page
 
