@@ -26,6 +26,8 @@ exec_redis:
 	docker-compose -f srcs/docker-compose.yml exec redis_cache bash
 exec_adm:
 	docker-compose -f srcs/docker-compose.yml exec adminer bash
+exec_page:
+	docker-compose -f srcs/docker-compose.yml exec page bash
 
 clean:
 	docker stop $$(docker ps -qa); \

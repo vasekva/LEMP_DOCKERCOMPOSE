@@ -23,6 +23,13 @@ volumes:
      type: none
      o: bind
      device: /Users/jberegon/data/usr/
+ page:
+   driver: local
+   name: page
+   driver_opts:
+     type: none
+     o: bind
+     device: /Users/jberegon/data/page/
 networks:
   what_is_goin_on:
     name: what_is_goin_on
@@ -144,4 +151,14 @@ services:
       mariadb:
         condition: service_healthy
     container_name: adminer
+
+  page:
+    build: ./requirements/my_page
+    restart: always
+    networks:
+      - what_is_goin_on
+    volumes:
+      - wordpress:/var/www/html/
+#      - page:/usr/share/nginx/html/
+    container_name: page
 
