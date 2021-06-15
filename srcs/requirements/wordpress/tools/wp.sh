@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+  sleep 10
 #  sed -i "s/supervised no/supervised systemd/" "/etc/redis/redis.conf"
 #  sed -i "s/#maxmemory/maxmemory 128M/" "/etc/redis/redis.conf"
 #  sed -i "s/#maxmemory-policy noeviction/maxmemory-policy allkeys-lfu/" "/etc/redis/redis.conf"
@@ -18,7 +19,7 @@ if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
   mv /server_dir/wp-config.php /var/www/html/wordpress
   echo "Configuring Wordpress parameters"
   wp core install --allow-root \
-      --url=${URL} \
+      --url=${WP_URL} \
       --title=${WP_TITLE} \
       --admin_user=${WP_ADMIN} \
       --admin_password=${WP_ADMIN_PASS} \

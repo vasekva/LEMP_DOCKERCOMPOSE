@@ -24,6 +24,8 @@ exec_ftp:
 	docker-compose -f srcs/docker-compose.yml exec ftpd-server bash
 exec_redis:
 	docker-compose -f srcs/docker-compose.yml exec redis_cache bash
+exec_adm:
+	docker-compose -f srcs/docker-compose.yml exec adminer bash
 
 clean:
 	docker stop $$(docker ps -qa); \

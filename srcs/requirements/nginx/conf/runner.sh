@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sleep 20
+
 # Replace the hostname in the container
 # sed -i.bak 's/HOSTNAME/'"$HOSTNAME"'/g' /www/data/index.html
 

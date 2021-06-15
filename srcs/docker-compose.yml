@@ -127,18 +127,21 @@ services:
 #      - redis_cache
     container_name: ftpd-server
 
-#  #Adminer
-#  adminer:
+  #Adminer
+  adminer:
 #    image: adminer
-#    ports:
-#      - "8080:8080"
-#    restart: always
-#    environment:
-#      ADMINER_DEFAULT_SERVER: mariadb
-#    networks:
-#      - what_is_goin_on
-#    depends_on:
-#      mariadb:
-#        condition: service_healthy
-
+    build: ./requirements/adminer/
+    ports:
+      - "8080:8080"
+    restart: always
+    env_file: .env
+    networks:
+      - what_is_goin_on
+    volumes:
+      - wordpress:/var/www/html/
+#      - /Users/jberegon/data/adminer_copy/:/run/
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    container_name: adminer
 
