@@ -1,15 +1,23 @@
 <?php
-define( 'WP_REDIS_HOST', 'redis_cache');
-define( 'WP_REDIS_PORT', 6379 );
-define( 'WP_REDIS_CLIENT', 'redis_cache' );
-define( 'WP_CACHE_KEY_SALT', getenv('WP_URL'));
-define( 'WP_CACHE', true);
+
 define( 'DB_NAME', getenv('DATABASE'));
 define( 'DB_USER', getenv('DB_USER'));
 define( 'DB_PASSWORD', getenv('DB_PASSWORD'));
 define( 'DB_HOST', getenv('DB_HOST'));
 define( 'DB_CHARSET', 'utf8');
 define( 'DB_COLLATE', '');
+
+#redis_cache
+
+define( 'WP_REDIS_HOST', 'redis_cache' );
+define( 'WP_REDIS_PORT', 6379 );
+
+define( 'FS_METHOD', 'direct' );
+// define( 'WP_REDIS_HOST', 'redis_cache');
+// define( 'WP_REDIS_PORT', 6379 );
+// define( 'WP_REDIS_CLIENT', 'redis_cache' );
+define( 'WP_CACHE_KEY_SALT', getenv('WP_URL'));
+define( 'WP_CACHE', true);
 
 /**#@+
  * Authentication unique keys and salts.

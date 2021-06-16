@@ -91,21 +91,24 @@ services:
     container_name: mariadb
 
   #REDIS_CACHE
-#  redis_cache:
-#    build: ./requirements/redis-cache/
-#    restart: always
-#    volumes:
-#      - wordpress:/var/www/html
-#      - usr:/usr/local/bin/
-##      - ./requirements/redis-cache/conf/redis.conf:/etc/redis/redis.conf
-#    env_file: .env
-#    networks:
-#      - what_is_goin_on
-#    links:
-#      - wordpress
-#    depends_on:
-#      - nginx
-#    container_name: redis_cache
+  redis_cache:
+    build: ./requirements/redis-cache/
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - wordpress:/var/www/html/wordpress/
+      - bin:/usr/local/bin/
+#      - ./requirements/redis-cache/conf/redis.conf:/etc/redis/redis.conf
+    env_file: .env
+    hostname: redis_cache
+    networks:
+      - what_is_goin_on
+    links:
+      - wordpress
+    depends_on:
+      - nginx
+    container_name: redis_cache
 
 
   ftpd-server:
