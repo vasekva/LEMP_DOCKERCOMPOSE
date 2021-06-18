@@ -41,6 +41,7 @@ cleandir:
 	rm -rf /Users/jberegon/data/wp/*
 	rm -rf /Users/jberegon/data/database/*
 	rm -rf /Users/jberegon/data/usr/*
+	rm -rf /Users/jberegon/data/html/*
 re: clean
 	rm -rf /Users/jberegon/data/wp/*
 	rm -rf /Users/jberegon/data/database/*
