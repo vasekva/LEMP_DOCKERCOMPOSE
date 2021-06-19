@@ -52,8 +52,6 @@ services:
       - what_is_goin_on
     depends_on:
       - wordpress
-#      wordpress:
-#        condition: service_healthy
     container_name: nginx
 
   #WORD_PRESS
@@ -69,12 +67,6 @@ services:
       - what_is_goin_on
     depends_on:
       - mariadb
-#      mariadb:
-#        condition: service_healthy
-    healthcheck:
-      test: -d /var/www/html/wordpress/
-      interval: 5s
-      retries: 10
     container_name: wordpress
 
   #MySQL Service
@@ -100,7 +92,6 @@ services:
     volumes:
       - wordpress:/var/www/html
       - usr:/usr/local/bin/
-#      - ./requirements/redis-cache/conf/redis.conf:/etc/redis/redis.conf
     env_file: .env
     networks:
       - what_is_goin_on
@@ -135,7 +126,6 @@ services:
 
   #Adminer
   adminer:
-#    image: adminer
     build: ./requirements/adminer/
     ports:
       - "8080:8080"
@@ -145,7 +135,6 @@ services:
       - what_is_goin_on
     volumes:
       - wordpress:/var/www/html/
-#      - /Users/jberegon/data/adminer_copy/:/run/
     depends_on:
       mariadb:
         condition: service_healthy
@@ -158,6 +147,16 @@ services:
       - what_is_goin_on
     volumes:
       - wordpress:/var/www/html/
-#      - page:/usr/share/nginx/html/
     container_name: page
 
+  apache:
+    build: requirements/apache/
+    restart: always
+    networks:
+      - what_is_goin_on
+    ports:
+      - "1443:443"
+    volumes:
+      - ./requirements/apache/access.log:/var/log/apache2/access.log
+      - ./requirements/apache/error.log:/var/log/apache2/error.log
+    container_name: apache

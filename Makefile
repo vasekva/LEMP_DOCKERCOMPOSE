@@ -28,6 +28,8 @@ exec_adm:
 	docker-compose -f srcs/docker-compose.yml exec adminer bash
 exec_page:
 	docker-compose -f srcs/docker-compose.yml exec page bash
+exec_apache:
+	docker-compose -f srcs/docker-compose.yml exec apache bash
 
 clean:
 	docker stop $$(docker ps -qa); \
