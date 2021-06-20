@@ -1,12 +1,10 @@
 FROM debian:buster
 
-WORKDIR ./server_dir/
+WORKDIR ./tools_dir/
 
 RUN apt-get update && apt-get upgrade -y && \
-	apt-get install -y php-fpm php-mysql php-mbstring php-gd php-xml \
-	wget
-
-#RUN apt-get install redis-server
+	apt-get install -y php-fpm php-mysql \
+	php-mbstring php-gd php-xml wget
 
 EXPOSE 9000
 

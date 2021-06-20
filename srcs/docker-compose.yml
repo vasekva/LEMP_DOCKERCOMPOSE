@@ -8,7 +8,7 @@ volumes:
   driver_opts:
    type: none
    o: bind
-   device: /Users/jberegon/data/wp/
+   device: /Users/jberegon/data/html/
  db:
   driver: local
   name: database
@@ -46,20 +46,19 @@ services:
     volumes:
       - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
       - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/
     env_file: .env
     networks:
       - what_is_goin_on
     depends_on:
       - wordpress
     container_name: nginx
-
-  #WORD_PRESS
+  #WORDPRESS
   wordpress:
     build: ./requirements/wordpress/
     restart: always
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/
       - usr:/usr/local/bin/
       - ./requirements/wordpress/tools/debug.log:/var/www/html/wordpress/wp-content/debug.log
     env_file: .env
@@ -68,7 +67,6 @@ services:
     depends_on:
       - mariadb
     container_name: wordpress
-
   #MySQL Service
   mariadb:
     build: ./requirements/mariadb/
@@ -84,23 +82,20 @@ services:
       interval: 5s
       retries: 10
     container_name: mariadb
-
   #REDIS_CACHE
   redis_cache:
-    build: ./requirements/redis-cache/
+    build: ./requirements/bonus/redis-cache/
     restart: always
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/
       - usr:/usr/local/bin/
     env_file: .env
     networks:
       - what_is_goin_on
-    links:
-      - wordpress
     depends_on:
       - nginx
     container_name: redis_cache
-
+  #FTP
   ftpd-server:
     ports:
       - "2020:20"
@@ -111,52 +106,46 @@ services:
       - "12023:12023"
       - "12024:12024"
       - "12025:12025"
-    build: ./requirements/vsftpd/
+    build: ./requirements/bonus/vsftpd/
     restart: always
     volumes:
       - wordpress:/wp_ftp_content
-    environment:
-      USER: "user"
-      PASS: "password"
-    networks:
-      - what_is_goin_on
-#    depends_on:
-#      - redis_cache
-    container_name: ftpd-server
-
-  #Adminer
-  adminer:
-    build: ./requirements/adminer/
-    ports:
-      - "8080:8080"
-    restart: always
     env_file: .env
     networks:
       - what_is_goin_on
+    container_name: ftpd-server
+  #Adminer
+  adminer:
+    build: ./requirements/bonus/adminer/
+    restart: always
     volumes:
       - wordpress:/var/www/html/
+    env_file: .env
+    networks:
+      - what_is_goin_on
     depends_on:
       mariadb:
         condition: service_healthy
     container_name: adminer
-
+  #HTML_PAGE
   page:
-    build: ./requirements/my_page
+    build: ./requirements/bonus/my_page/
     restart: always
-    networks:
-      - what_is_goin_on
     volumes:
       - wordpress:/var/www/html/
-    container_name: page
-
-  apache:
-    build: requirements/apache/
-    restart: always
     networks:
       - what_is_goin_on
+    container_name: page
+  #APACHE
+  apache:
     ports:
       - "1443:443"
+    build: ./requirements/bonus/apache/
+    restart: always
     volumes:
-      - ./requirements/apache/access.log:/var/log/apache2/access.log
-      - ./requirements/apache/error.log:/var/log/apache2/error.log
+      - ./requirements/bonus/apache/tools/logs/access.log:/var/log/apache2/access.log
+      - ./requirements/bonus/apache/tools/logs/error.log:/var/log/apache2/error.log
+    env_file: .env
+    networks:
+      - what_is_goin_on
     container_name: apache

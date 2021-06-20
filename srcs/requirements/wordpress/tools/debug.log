@@ -1765,3 +1765,11 @@ Stack trace:
 #9 /var/www/html/wordpress/wp-admin/admin.php(34): require_once('/var/www/html/w...')
 #10 /var/www/html/wordpress/wp-admin/options-general.php(10): require_once('/var/www/html/w...')
 #11 {main}
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=84 in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): MySQL server has gone away in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=18 in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2006): MySQL server has gone away in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=84 in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): MySQL server has gone away in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=19 in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653
+[19-Jun-2021 21:37:04 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2006): MySQL server has gone away in /var/www/html/wordpress/wp-includes/wp-db.php on line 1653

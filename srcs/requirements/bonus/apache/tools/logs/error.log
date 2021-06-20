@@ -1,0 +1,135 @@
+[Sat Jun 19 10:34:34.834613 2021] [ssl:warn] [pid 1:tid 140525664470144] AH01906: 172.29.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:34:34.835711 2021] [ssl:warn] [pid 1:tid 140525664470144] AH01909: 172.29.0.2:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.29.0.2. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 10:34:34.843706 2021] [ssl:warn] [pid 1:tid 140525664470144] AH01906: 172.29.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:34:34.844057 2021] [ssl:warn] [pid 1:tid 140525664470144] AH01909: 172.29.0.2:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 10:34:34.845472 2021] [mpm_event:notice] [pid 1:tid 140525664470144] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 10:34:34.845816 2021] [core:notice] [pid 1:tid 140525664470144] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 10:35:47.341728 2021] [mpm_event:notice] [pid 1:tid 140525664470144] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 10:39:29.747804 2021] [ssl:warn] [pid 1:tid 139898174035072] AH01906: 172.29.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:39:29.752397 2021] [ssl:warn] [pid 1:tid 139898174035072] AH01909: 172.29.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.29.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 10:39:29.758945 2021] [ssl:warn] [pid 1:tid 139898174035072] AH01906: 172.29.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:39:29.761102 2021] [ssl:warn] [pid 1:tid 139898174035072] AH01909: 172.29.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 10:39:29.763314 2021] [mpm_event:notice] [pid 1:tid 139898174035072] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 10:39:29.765734 2021] [core:notice] [pid 1:tid 139898174035072] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 10:51:49.148381 2021] [mpm_event:notice] [pid 1:tid 139898174035072] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 10:52:25.362727 2021] [ssl:warn] [pid 1:tid 139996416644224] AH01906: 172.18.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:52:25.364490 2021] [ssl:warn] [pid 1:tid 139996416644224] AH01909: 172.18.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 10:52:25.377470 2021] [ssl:warn] [pid 1:tid 139996416644224] AH01906: 172.18.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 10:52:25.378243 2021] [ssl:warn] [pid 1:tid 139996416644224] AH01909: 172.18.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 10:52:25.379990 2021] [mpm_event:notice] [pid 1:tid 139996416644224] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 10:52:25.380972 2021] [core:notice] [pid 1:tid 139996416644224] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 10:54:59.581704 2021] [mpm_event:notice] [pid 1:tid 139996416644224] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:03:10.180360 2021] [ssl:warn] [pid 1:tid 140405598196864] AH01906: 172.18.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:03:10.181567 2021] [ssl:warn] [pid 1:tid 140405598196864] AH01909: 172.18.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:03:10.188897 2021] [ssl:warn] [pid 1:tid 140405598196864] AH01906: 172.18.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:03:10.189396 2021] [ssl:warn] [pid 1:tid 140405598196864] AH01909: 172.18.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:03:10.190658 2021] [mpm_event:notice] [pid 1:tid 140405598196864] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:03:10.191159 2021] [core:notice] [pid 1:tid 140405598196864] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:06:17.654998 2021] [mpm_event:notice] [pid 1:tid 140405598196864] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:12:27.204941 2021] [ssl:warn] [pid 1:tid 139989950833792] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:12:27.205990 2021] [ssl:warn] [pid 1:tid 139989950833792] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:12:27.218188 2021] [ssl:warn] [pid 1:tid 139989950833792] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:12:27.219494 2021] [ssl:warn] [pid 1:tid 139989950833792] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:12:27.221464 2021] [mpm_event:notice] [pid 1:tid 139989950833792] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:12:27.225127 2021] [core:notice] [pid 1:tid 139989950833792] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:16:45.189519 2021] [mpm_event:notice] [pid 1:tid 139989950833792] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:20:38.190336 2021] [ssl:warn] [pid 1:tid 139636397307008] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:20:38.191255 2021] [ssl:warn] [pid 1:tid 139636397307008] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:20:38.197468 2021] [ssl:warn] [pid 1:tid 139636397307008] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:20:38.197939 2021] [ssl:warn] [pid 1:tid 139636397307008] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:20:38.198952 2021] [mpm_event:notice] [pid 1:tid 139636397307008] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:20:38.199322 2021] [core:notice] [pid 1:tid 139636397307008] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:24:08.474251 2021] [mpm_event:notice] [pid 1:tid 139636397307008] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:27:21.929908 2021] [ssl:warn] [pid 1:tid 140015773303936] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:27:21.930838 2021] [ssl:warn] [pid 1:tid 140015773303936] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:27:21.937128 2021] [ssl:warn] [pid 1:tid 140015773303936] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:27:21.937501 2021] [ssl:warn] [pid 1:tid 140015773303936] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:27:21.938431 2021] [mpm_event:notice] [pid 1:tid 140015773303936] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:27:21.939055 2021] [core:notice] [pid 1:tid 140015773303936] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:35:43.455500 2021] [mpm_event:notice] [pid 1:tid 140015773303936] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:38:56.998175 2021] [ssl:warn] [pid 1:tid 140021053039744] AH01906: 172.19.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:38:57.000002 2021] [ssl:warn] [pid 1:tid 140021053039744] AH01909: 172.19.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:38:57.031289 2021] [ssl:warn] [pid 1:tid 140021053039744] AH01906: 172.19.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:38:57.033080 2021] [ssl:warn] [pid 1:tid 140021053039744] AH01909: 172.19.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:38:57.034379 2021] [mpm_event:notice] [pid 1:tid 140021053039744] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:38:57.034818 2021] [core:notice] [pid 1:tid 140021053039744] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:40:04.687514 2021] [mpm_event:notice] [pid 1:tid 140021053039744] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 11:44:59.887569 2021] [ssl:warn] [pid 1:tid 140056712017024] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:44:59.888367 2021] [ssl:warn] [pid 1:tid 140056712017024] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 11:44:59.897121 2021] [ssl:warn] [pid 1:tid 140056712017024] AH01906: 172.19.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 11:44:59.897568 2021] [ssl:warn] [pid 1:tid 140056712017024] AH01909: 172.19.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 11:44:59.899088 2021] [mpm_event:notice] [pid 1:tid 140056712017024] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 11:44:59.899569 2021] [core:notice] [pid 1:tid 140056712017024] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 11:50:18.724539 2021] [mpm_event:notice] [pid 1:tid 140056712017024] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 13:37:01.591144 2021] [ssl:warn] [pid 1:tid 139867698349184] AH01906: 172.19.0.6:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 13:37:01.646320 2021] [ssl:warn] [pid 1:tid 139867698349184] AH01909: 172.19.0.6:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 13:37:01.654630 2021] [ssl:warn] [pid 1:tid 139867698349184] AH01906: 172.19.0.6:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 13:37:01.655024 2021] [ssl:warn] [pid 1:tid 139867698349184] AH01909: 172.19.0.6:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 13:37:01.656250 2021] [mpm_event:notice] [pid 1:tid 139867698349184] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 13:37:01.657028 2021] [core:notice] [pid 1:tid 139867698349184] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 15:21:59.466589 2021] [mpm_event:notice] [pid 1:tid 139867698349184] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 22:16:19.667327 2021] [ssl:warn] [pid 1:tid 140644568073344] AH01906: 172.28.0.3:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 22:16:19.668962 2021] [ssl:warn] [pid 1:tid 140644568073344] AH01909: 172.28.0.3:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.28.0.3. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 22:16:19.677343 2021] [ssl:warn] [pid 1:tid 140644568073344] AH01906: 172.28.0.3:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 22:16:19.677948 2021] [ssl:warn] [pid 1:tid 140644568073344] AH01909: 172.28.0.3:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 22:16:19.679333 2021] [mpm_event:notice] [pid 1:tid 140644568073344] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 22:16:19.680518 2021] [core:notice] [pid 1:tid 140644568073344] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 22:20:58.377516 2021] [mpm_event:notice] [pid 1:tid 140644568073344] AH00491: caught SIGTERM, shutting down
+[Sat Jun 19 22:31:34.935709 2021] [ssl:warn] [pid 1:tid 139783983637632] AH01906: 172.29.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 22:31:34.936799 2021] [ssl:warn] [pid 1:tid 139783983637632] AH01909: 172.29.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.29.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Jun 19 22:31:34.946105 2021] [ssl:warn] [pid 1:tid 139783983637632] AH01906: 172.29.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 19 22:31:34.946649 2021] [ssl:warn] [pid 1:tid 139783983637632] AH01909: 172.29.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 19 22:31:34.948224 2021] [mpm_event:notice] [pid 1:tid 139783983637632] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sat Jun 19 22:31:34.948603 2021] [core:notice] [pid 1:tid 139783983637632] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jun 19 22:42:51.093092 2021] [mpm_event:notice] [pid 1:tid 139783983637632] AH00491: caught SIGTERM, shutting down
+[Sun Jun 20 01:52:08.734734 2021] [ssl:warn] [pid 1:tid 140361804190848] AH01906: 172.29.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 01:52:08.736057 2021] [ssl:warn] [pid 1:tid 140361804190848] AH01909: 172.29.0.5:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.29.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sun Jun 20 01:52:08.745695 2021] [ssl:warn] [pid 1:tid 140361804190848] AH01906: 172.29.0.5:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 01:52:08.746475 2021] [ssl:warn] [pid 1:tid 140361804190848] AH01909: 172.29.0.5:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Jun 20 01:52:08.748277 2021] [mpm_event:notice] [pid 1:tid 140361804190848] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sun Jun 20 01:52:08.748695 2021] [core:notice] [pid 1:tid 140361804190848] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sun Jun 20 02:05:09.109490 2021] [mpm_event:notice] [pid 1:tid 140361804190848] AH00491: caught SIGTERM, shutting down
+[Sun Jun 20 02:06:01.853124 2021] [ssl:warn] [pid 1:tid 140264881304704] AH01906: 172.29.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:06:01.854683 2021] [ssl:warn] [pid 1:tid 140264881304704] AH01909: 172.29.0.2:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.29.0.2. Set the 'ServerName' directive globally to suppress this message
+[Sun Jun 20 02:06:01.867244 2021] [ssl:warn] [pid 1:tid 140264881304704] AH01906: 172.29.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:06:01.869556 2021] [ssl:warn] [pid 1:tid 140264881304704] AH01909: 172.29.0.2:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Jun 20 02:06:01.871043 2021] [mpm_event:notice] [pid 1:tid 140264881304704] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sun Jun 20 02:06:01.872037 2021] [core:notice] [pid 1:tid 140264881304704] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sun Jun 20 02:10:36.350621 2021] [mpm_event:notice] [pid 1:tid 140264881304704] AH00491: caught SIGTERM, shutting down
+[Sun Jun 20 02:12:04.910486 2021] [ssl:warn] [pid 1:tid 139779870971008] AH01906: 172.30.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:12:04.911131 2021] [ssl:warn] [pid 1:tid 139779870971008] AH01909: 172.30.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sun Jun 20 02:12:04.934191 2021] [ssl:warn] [pid 1:tid 139779870971008] AH01906: 172.30.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:12:04.940661 2021] [ssl:warn] [pid 1:tid 139779870971008] AH01909: 172.30.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Jun 20 02:12:04.947459 2021] [mpm_event:notice] [pid 1:tid 139779870971008] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sun Jun 20 02:12:04.953560 2021] [core:notice] [pid 1:tid 139779870971008] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sun Jun 20 02:22:01.195918 2021] [mpm_event:notice] [pid 1:tid 139779870971008] AH00491: caught SIGTERM, shutting down
+[Sun Jun 20 02:50:58.926650 2021] [ssl:warn] [pid 1:tid 140292967744640] AH01906: 172.31.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:50:58.929665 2021] [ssl:warn] [pid 1:tid 140292967744640] AH01909: 172.31.0.4:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.31.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sun Jun 20 02:50:58.939269 2021] [ssl:warn] [pid 1:tid 140292967744640] AH01906: 172.31.0.4:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:50:58.939843 2021] [ssl:warn] [pid 1:tid 140292967744640] AH01909: 172.31.0.4:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Jun 20 02:50:58.941160 2021] [mpm_event:notice] [pid 1:tid 140292967744640] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sun Jun 20 02:50:58.941931 2021] [core:notice] [pid 1:tid 140292967744640] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sun Jun 20 02:58:55.312318 2021] [mpm_event:notice] [pid 1:tid 140292967744640] AH00491: caught SIGTERM, shutting down
+[Sun Jun 20 02:59:36.131852 2021] [ssl:warn] [pid 1:tid 140478309344384] AH01906: 192.168.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:59:36.132585 2021] [ssl:warn] [pid 1:tid 140478309344384] AH01909: 192.168.0.2:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Sun Jun 20 02:59:36.141053 2021] [ssl:warn] [pid 1:tid 140478309344384] AH01906: 192.168.0.2:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Jun 20 02:59:36.142331 2021] [ssl:warn] [pid 1:tid 140478309344384] AH01909: 192.168.0.2:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Jun 20 02:59:36.145038 2021] [mpm_event:notice] [pid 1:tid 140478309344384] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Sun Jun 20 02:59:36.145578 2021] [core:notice] [pid 1:tid 140478309344384] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
